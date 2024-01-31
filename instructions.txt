@@ -1,0 +1,70 @@
+1. creo un progetto laravel all'interno di questa cartella:
+
+    composer create-project laravel/laravel ./
+
+2. rimuovo css 
+
+    npm remove postcss
+
+3. installo tutti i pacchetti di npm 
+
+    npm i
+
+4. installo sass
+
+    npm i --save-dev sass
+
+        4.2 -> cambio i file dentro resources da CSS a SCSS
+
+5. installo bootstrap
+
+    npm i --save-dev bootstrap @popperjs/core
+
+6. creo path per utilizzarla come alias per la cartella di sistema per configurare vite, vado quindi in vite.confic.js ed aggiungo: 
+
+    const path = require('path');
+
+7. nel plugin di laravel (dentro a defineConfig) vado a cambiare l'input da CSS a SCSS
+
+    [prima =] 'resources/css/app.css', 'resources/js/app.js'
+    [dopo =] 'resources/scss/app.scss', 'resources/js/app.js'
+
+8. creo alias per acceder alle risorse (da mettere dentro dopo plugins di laravel)
+
+        resolve: {
+            alias: {
+                // alias per accedere a /resources/ attraverso ~resources
+                '~resources': '/resources/'
+            }
+        },
+
+        8.2 -> faccio la stessa cosa per l'alias di bootstrap
+
+            // alias per acceder a bootstrap
+            '~bootstrap': '',
+
+9. importa resources in resources -> js -> app.js 
+
+    import 'resources/scss/app.scss';
+
+10. importo app.js per vite nell'head di app.blade.php 
+
+    @vite('resources/js/app.js')
+
+11. aggiungi import per gli assets in app.js
+
+      import.meta.glob([
+      '../img/**'
+      ])
+
+12. aggiungere package-lock.json a gitignore
+
+package-lock.json
+
+13. importa bootstrap in app.js
+
+    import * as bootstrap from 'bootstrap';
+
+        13.2 -> importare bootstrap anche dentro app.scss
+
+            @import "../../node_modules/bootstrap/scss/bootstrap";
