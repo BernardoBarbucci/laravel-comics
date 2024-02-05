@@ -1,50 +1,39 @@
 @extends('layout.app')
 
 @section('main-content')
-<template>
-    <section id="content">
-        <div class="container">
-            <div class="current-series">
-                <p>CURRENT SERIES</p>
+<section id="content">
+    <div class="container">
+        <div class="current-series">
+            <p>CURRENT SERIES</p>
+        </div>
+    </div>
+</section>
+
+<section id="books">
+    <div class="container">
+        @foreach($comicsData as $index => $card)
+            <div class="articolo">
+                <!-- Visualizza i dati del fumetto qui -->
+                <img src="{{ $card['thumb'] }}" alt="{{ $card['title'] }}">
+                <h3>{{ $card['title'] }}</h3>
+                <p>{{ $card['description'] }}</p>
+                <!-- Altri dettagli del fumetto, ad esempio prezzo, serie, data di vendita, ecc. -->
             </div>
-        </div>
-    </section>
+        @endforeach
+    </div>
+</section>
 
-    <section id="books">
-        <div class="container">
-            <Cardslist v-for="(card, index) in comicsData" :key="index" :card="card" class="articolo" />
-        </div>
-    </section>
-
-    <section id="categories">
-        <div class="container">
-            <ul class="comics-categ">
-                <li class="comic-card">
-                    <img src="../assets/vue-dc-comics-1/img/buy-comics-digital-comics.png" class="comic-img"
-                        alt="digital comics">
-                    <p>DIGITAL COMICS</p>
-                </li>
-                <li class="comic-card">
-                    <img src="../assets/vue-dc-comics-1/img/buy-comics-merchandise.png" class="comic-img" alt="merch">
-                    <p>DC MERCHANDISE</p>
-                </li>
-                <li class="comic-card">
-                    <img src="../assets/vue-dc-comics-1/img/buy-comics-subscriptions.png" class="comic-img" alt="subs">
-                    <p>SUBSCRIPTION</p>
-                </li>
-                <li class="comic-card">
-                    <img src="../assets/vue-dc-comics-1/img/buy-comics-shop-locator.png" class="comic-img"
-                        alt="shops location">
-                    <p>COMIC SHOP LOCATOR</p>
-                </li>
-                <li class="comic-card">
-                    <img src="../assets/vue-dc-comics-1/img/buy-dc-power-visa.svg" class="last-comic-img" alt="battery">
-                    <p>DC POWER VISA</p>
-                </li>
-            </ul>
-        </div>
-    </section>
-</template>
+<section id="categories">
+    <div class="container">
+        <ul class="comics-categ">
+            <li class="comic-card">
+                <img src="../assets/vue-dc-comics-1/img/buy-comics-digital-comics.png" class="comic-img" alt="digital comics">
+                <p>DIGITAL COMICS</p>
+            </li>
+            <!-- Aggiungi gli altri elementi del menu delle categorie -->
+        </ul>
+    </div>
+</section>
 
 {{-- <script>
     import Cardslist from '../components/Cardslist.vue';
@@ -87,3 +76,4 @@
     }
     </style>    
 @endsection
+
