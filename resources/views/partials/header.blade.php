@@ -38,7 +38,8 @@
     }
 }
 .logo{
-    height: 70%;
+    height: 65%;
+    margin-bottom: 1rem;
     img{
         height: 100%;
         transition: filter 0.3s ease-in-out;

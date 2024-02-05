@@ -49,7 +49,7 @@
     transition: transform .4s ease-in-out;
 
     &:hover {
-        transform: scale(1.25);
+        transform: scale(1.175);
         transform-origin: center center;
     }
 
