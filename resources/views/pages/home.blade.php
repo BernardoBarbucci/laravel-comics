@@ -1,12 +1,14 @@
 @extends('layout.app')
 
 @section('main-content')
-<section id="content">
-    <div class="container">
-        <div class="current-series">
-            <p>CURRENT SERIES</p>
+<section id="content" style="background-image: url('{{ asset("img/laravel-comics/laravel-comics/images/jumbotron.jpg") }}'); background-size: cover; background-position: top;">
+    <section id="content">
+        <div class="container">
+            <div class="current-series">
+                <p>CURRENT SERIES</p>
+            </div>
         </div>
-    </div>
+    </section>    
 </section>
 
 <section id="books">
@@ -34,46 +36,14 @@
         </ul>
     </div>
 </section>
-
-{{-- <script>
-    import Cardslist from '../components/Cardslist.vue';
-    import jsonData from '../assets/vue-dc-comics-2/dc-comics.json';
     
-    export default {
-        name: 'Appmain',
-        components: {
-            Cardslist,
-        },
-        data() {
-            return {
-                comicsData: [],
-            };
-        },
-        created() {
-            this.comicsUpload();
-        },
-        methods: {
-            comicsUpload() {
-                this.comicsData = jsonData;
-            }
-        },
-    };
-</script> --}}
-    
-    <style lang="scss" scoped>
-    .last-comic-img {
-        height: 1.7rem;
-    }
-    
-    #content {
-        background-image: url('../assets/vue-dc-comics-1/img/jumbotron.jpg');
-        background-size: cover;
-        background-position: top;
-    }
-    
-    .container {
-        padding: 3rem 1rem;
-    }
-    </style>    
+<style lang="scss" scoped>
+.last-comic-img {
+    height: 1.7rem;
+}    
+/* #content {
+    background: url('#{asset("img/laravel-comics/laravel-comics/images/jumbotron.jpg")}') no-repeat center center fixed;
+    background-size: cover;
+} */
+</style>    
 @endsection
-
