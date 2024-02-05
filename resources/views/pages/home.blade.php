@@ -16,7 +16,7 @@
         @foreach($comicsData as $index => $card)
             <div class="comic-article text-white">
                 <!-- dati del fumetto -->
-                <img src="{{ $card['thumb'] }}" class="comic-img" alt="{{ $card['title'] }}">
+                <img src="{{ $card['thumb'] }}" class="comic-img mb-1" alt="{{ $card['title'] }}">
                 <h3>{{ $card['title'] }}</h3>
                 <p>{{ $card['price'] }}</p>
                 {{-- <p>{{ $card['series'] }}</p> --}}
