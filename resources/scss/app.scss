@@ -15,6 +15,23 @@
 }
 
 // header
+#top-bar {
+    height: 1rem;
+    background-color: $theme-color;
+
+    div {
+        p {
+            font-size: .6rem;
+            color: $white;
+        }
+
+        p:first-child {
+            padding-right: 2rem;
+            margin-left: auto;
+        }
+    }
+}
+
 header {
     height: 5rem;
     background-color: $white;

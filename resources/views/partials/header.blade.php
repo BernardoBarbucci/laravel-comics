@@ -1,8 +1,13 @@
 <header>
+    <div id="top-bar" class="">
+        <div class="container d-flex flex-row flex-end">
+            <p>DC POWER'' VISA® </p>
+            <p>ADDITIONAL DC SITES▽</p>
+        </div>
+    </div>
     <div class="container">
         <div class="logo">
             <img src="{{ asset('img/laravel-comics/laravel-comics/images/dc-logo.png') }}" alt="logo">
-
         </div>
         <nav class="navbar">
             <ul class="nav-list">
