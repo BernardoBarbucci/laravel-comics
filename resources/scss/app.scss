@@ -1,2 +1,160 @@
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+
 // importa bootstrap
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+* {
+    @include reset;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    @include container;
+    @include flex;
+}
+
+// header
+header {
+    height: 5rem;
+    background-color: $white;
+}
+
+.nav-list {
+    @include flex;
+    list-style: none;
+
+    li {
+        transition: border-bottom 0.3s ease;
+    }
+
+    li:hover {
+        @extend li;
+        border-bottom: $borderHbottom solid $theme-color;
+    }
+}
+
+h1 {
+    color: white;
+    font-weight: 700;
+}
+
+// main
+main {
+    #content {
+        height: 16rem;
+    }
+
+    #categories {
+        height: 8rem;
+        width: 100%;
+        background-color: $theme-color;
+    }
+}
+
+// jumbotron
+.current-series {
+    height: 2rem;
+    padding-top: 12rem;
+
+    p {
+        background-color: rgb(47, 131, 241);
+        height: 2rem;
+        width: 8rem;
+        font-size: .8rem;
+        font-weight: bold;
+        color: $white;
+        @include flex-centered;
+    }
+}
+
+// books / comics cards
+#books {
+    height: 100%;
+    background-color: $content-color;
+}
+
+// categories
+.comics-categ {
+    @include flex-evenly;
+    width: 100%;
+    height: 100%;
+}
+
+.comic-card {
+    @include flex-evenly;
+    height: 100%;
+    list-style: none;
+    transition: transform .4s ease-in-out;
+
+    .comic-img {
+        height: 2.3rem;
+    }
+
+    p {
+        font-size: .75rem;
+        color: $white;
+        margin-left: 5px;
+    }
+
+    &:hover {
+        transform: scale(1.25);
+        transform-origin: center center;
+        font-weight: bold;
+    }
+}
+
+// footer
+.footer-lists {
+    @include flex-row;
+}
+
+#social-media {
+    background-color: $bottom-color;
+    height: 4.7rem
+}
+
+.wrapper {
+    @include flex;
+    width: 100%;
+}
+
+.left-info h1 {
+    font-size: .8rem;
+    font-weight: 500;
+    height: 2rem;
+    width: 7rem;
+    text-align: center;
+    line-height: 28px;
+    background-color: transparent;
+    border: 2px solid $theme-color;
+
+    &:hover {
+        color: $theme-color;
+        border-color: $white;
+    }
+}
+
+.right-info {
+    @include flex-row;
+
+    p {
+        font-size: .8rem;
+        font-weight: bold;
+        color: $theme-color;
+        line-height: 33px;
+        margin-right: .7rem;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.25);
+            transform-origin: center center;
+        }
+    }
+
+    .socials {
+        width: 13rem;
+        @include flex-around;
+        line-height: 30px;
+    }
+}

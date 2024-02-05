@@ -8,12 +8,17 @@
 {{-- vite inserisce qua app.js --}}
     @vite('resources/js/app.js')
 
+    @yield('head-content')
 </head>
 <body>
+    @include('partials.header')
+
     <main>
-        <h1>
-            Enjoy Laravel!
-        </h1>
+        @yield('main-content')
     </main>
+
+    @include('partials.footer')
+
+    @yield('script-content')
 </body>
 </html>
