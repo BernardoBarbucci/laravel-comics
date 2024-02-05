@@ -12,14 +12,16 @@
 </section>
 
 <section id="books">
-    <div class="container">
+    <div class="container py-5">
         @foreach($comicsData as $index => $card)
-            <div class="articolo">
-                <!-- Visualizza i dati del fumetto qui -->
-                <img src="{{ $card['thumb'] }}" alt="{{ $card['title'] }}">
+            <div class="comic-article text-white">
+                <!-- dati del fumetto -->
+                <img src="{{ $card['thumb'] }}" class="comic-img" alt="{{ $card['title'] }}">
                 <h3>{{ $card['title'] }}</h3>
-                <p>{{ $card['description'] }}</p>
-                <!-- Altri dettagli del fumetto, ad esempio prezzo, serie, data di vendita, ecc. -->
+                <p>{{ $card['price'] }}</p>
+                {{-- <p>{{ $card['series'] }}</p> --}}
+                {{-- <p>{{ $card['sale_date'] }}</p> --}}
+                {{-- <p>{{ $card['type'] }}</p>  --}}
             </div>
         @endforeach
     </div>
@@ -32,18 +34,38 @@
                 <img src="../assets/vue-dc-comics-1/img/buy-comics-digital-comics.png" class="comic-img" alt="digital comics">
                 <p>DIGITAL COMICS</p>
             </li>
-            <!-- Aggiungi gli altri elementi del menu delle categorie -->
         </ul>
     </div>
 </section>
     
 <style lang="scss" scoped>
-.last-comic-img {
-    height: 1.7rem;
-}    
-/* #content {
-    background: url('#{asset("img/laravel-comics/laravel-comics/images/jumbotron.jpg")}') no-repeat center center fixed;
-    background-size: cover;
-} */
+.comic-article {
+    height: 10rem;
+    width: 10rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 5rem;
+    color: white;
+    transition: transform .4s ease-in-out;
+
+    &:hover {
+        transform: scale(1.25);
+        transform-origin: center center;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    h3 {
+        font-size: .8rem;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: .7rem;
+    }
+}
 </style>    
 @endsection
