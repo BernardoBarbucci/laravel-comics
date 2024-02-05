@@ -83,6 +83,7 @@
 
     .info-list {
         margin-top: 1.5rem;
+
     }
     
     .info-list:nth-child(2) {
@@ -94,6 +95,7 @@
     }
     
     h1 {
+        padding-left: 2rem;
         font-size: 1.1rem;
         font-weight: bold;
         margin-top: 1rem;

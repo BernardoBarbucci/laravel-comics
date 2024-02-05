@@ -31,8 +31,24 @@
     <div class="container">
         <ul class="comics-categ">
             <li class="comic-card">
-                <img src="../assets/vue-dc-comics-1/img/buy-comics-digital-comics.png" class="comic-img" alt="digital comics">
-                <p>DIGITAL COMICS</p>
+                <img src="{{asset('img/laravel-comics/laravel-comics/images/buy-comics-digital-comics.png')}}" class="comic-img" alt="digital comics">
+                <p class="pt-3">DIGITAL COMICS</p>
+            </li>
+            <li class="comic-card">
+                <img src="{{asset('img/laravel-comics/laravel-comics/images/buy-comics-merchandise.png')}}" class="comic-img" alt="merchandise">
+                <p class="pt-3">DC MERCHANDISE</p>
+            </li>
+            <li class="comic-card">
+                <img src="{{asset('img/laravel-comics/laravel-comics/images/buy-comics-shop-locator.png')}}" class="comic-img" alt="locator">
+                <p class="pt-3">SUBSCRIPTION</p>
+            </li>
+            <li class="comic-card">
+                <img src="{{asset('img/laravel-comics/laravel-comics/images/buy-comics-subscriptions.png')}}" class="comic-img" alt="subs">
+                <p class="pt-3">COMIC SHOP LOCATOR</p>
+            </li>
+            <li class="comic-card">
+                <img src="{{asset('img/laravel-comics/laravel-comics/images/buy-dc-power-visa.svg')}}" class="comic-img" alt="battery">
+                <p class="pt-3">DC POWER VISA</p>
             </li>
         </ul>
     </div>
