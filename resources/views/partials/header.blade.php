@@ -1,7 +1,8 @@
 <header>
     <div class="container">
         <div class="logo">
-            <img src="" alt="logo">
+            <img src="{{ asset('img/laravel-comics/laravel-comics/images/dc-logo.png') }}" alt="logo">
+
         </div>
         <nav class="navbar">
             <ul class="nav-list">
